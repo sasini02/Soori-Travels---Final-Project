@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soori Travels Official Website</title>
+    <link rel="icon" href="images/title_icon.png">
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css">
+    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- custom js file link  -->
+    <script src="js/script.js" defer></script>
+    <script src="js/login.js"></script>
+
+</head>
+<body onload="getloginStatus()">
+    
+    
+<!-- header section starts  -->
+
+<header class="header">
+
+    <div id="menu-btn" class="fas fa-bars"></div>
+
+    <a data-aos="zoom-in-left" data-aos-delay="150" href="#" class="logo">Soori Travels </a>
+
+    <nav class="navbar">
+        <a data-aos="zoom-in-left" data-aos-delay="300" href="#home">home</a>
+        <a data-aos="zoom-in-left" data-aos-delay="450" href="#about">about</a>
+        <a data-aos="zoom-in-left" data-aos-delay="600" href="#packages">packages</a>
+        <a data-aos="zoom-in-left" data-aos-delay="750" href="#destination">destination</a>
+        <a data-aos="zoom-in-left" data-aos-delay="900" href="#services">services</a>
+        <a data-aos="zoom-in-left" data-aos-delay="1150" href="#gallery">gallery</a>
+        <a data-aos="zoom-in-left" data-aos-delay="1300" href="#blogs">blogs</a>
+    </nav>
+
+    <a data-aos="zoom-in-left" data-aos-delay="1300" href="login.html" class="btn" id="registerBtn"  >login</a>
+    
+
+</header>
+
+<!-- header section ends -->
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+    <div class="content">
+        <span data-aos="fade-up" data-aos-delay="150">Your Travel Partner</span>
+        <h3 data-aos="fade-up" data-aos-delay="300">Soori Travels</h3>
+        <p data-aos="fade-up" data-aos-delay="450">we're ready to make your vacation<br> wonderful and unforgettable.</p>
+        <a data-aos="fade-up" data-aos-delay="600" href="#packages" class="btn">book now</a>
+    </div>
+
+</section>
+
+<!-- home section ends -->
+
+<!-- booking form section starts  -->
+
+<!-- <section class="book-form" id="book-form">
+
+    <form action="">
+        <div data-aos="zoom-in" data-aos-delay="150" class="inputBox">
+            <span>Purpose?</span>
+           
+           <select id="Purpose" name="Purpose" >
+            <option value="" hidden>Purpose of your vacation</option>
+            <option value="option1" id="1">Relishing the exploration</option>
+            <option value="option2" id="2">Resting while exploring</option>
+          </select>
+           
+           
+
+        </div>
+        <div data-aos="zoom-in" data-aos-delay="300" class="inputBox">
+            <span>when?</span>
+            <input type="date" value="">
+        </div>
+        <div data-aos="zoom-in" data-aos-delay="450" class="inputBox">
+            <span>how many?</span>
+            <input type="number" placeholder="number of travelers" value="" min="1" max="10">
+        </div>
+        <input data-aos="zoom-in" data-aos-delay="600" type="submit" value="find now" class="btn" onclick = "">
+    </form>
+
+</section> -->
+
+<!-- booking form section ends -->
+
+<!-- about section starts  -->
+
+<section class="about" id="about">
+
+    <div class="video-container" data-aos="fade-right" data-aos-delay="300">
+        <video src="images/train video.mp4" muted autoplay loop class="video"></video>
+        <div class="controls">
+            <span class="control-btn" data-src="images/train video.mp4"></span>
+            <span class="control-btn" data-src="images/about-vid-2.mp4"></span>
+            <span class="control-btn" data-src="images/about-vid-3.mp4"></span>
+        </div>
+    </div>
+
+    <div class="content" data-aos="fade-left" data-aos-delay="600">
+        <h3>why choose us?</h3>
+        <p>"SOORI TRAVELS" is a travel agency with over 20 years of expertise in the Sri Lankan tourism industry 
+            including "A" grade drivers, and guides who are almost fully knowledgeable about Sri Lanka. With much 
+            joy, good knowledge, and extra cultural and local experiences, we're ready to make your ideal tour or 
+            vacation wonderful and unforgettable.
+            </p>
+        <a href="#" class="fbtn">read more</a>
+    </div>
+
+</section>
+
+<!-- about section ends -->
+<!-- packages section stars -->
+
+<!-- packages section ends -->
+<section class="packages" id="packages">
+    <div class="heading">
+        <h1>Tour packages</h1>
+    </div>
+    <div class="box-container">
+        <div class="box" data-aos="fade-up" data-aos-delay="150">
+            <div class="image">
+                <img src="images/Wildlife-Paradise.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>WILDLIFE PARADISE</h3>
+                <h5>7 NIGHTS 8 DAYS</h5>
+                <p>A visit to Sri Lanka is a must for all wildlife enthusiasts. The many national parks in Sri Lanka are home to majestic creatures</p>
+                <a href="#" onclick="alertMessage()">find out more <i class="fas fa-angle-right"></i></a>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="150">
+            <div class="image">
+                <img src="images/Sri-Lanka-Highlights.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>SRI LANKA HIGHLIGHTS</h3>
+                <h5>4 NIGHTS 5 DAYS</h5>
+                <p>Experience the highlights of Sri Lanka in this well-planned itinerary that showcases the jewels of our cultural heritage</p>
+                <a href="" onclick="alertMessage()">find out more <i class="fas fa-angle-right"></i></a>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="150">
+            <div class="image">
+                <img src="images/Cinnamon-Wellness.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>CINNAMON WELLNESS RETREAT</h3>
+                <h5>9 NIGHTS 10 DAYS</h5>
+                <p>Detox, Restore, Rejuvenate with a wellness getaway that will soothe your body, mind and soul</p>
+                <a href="" onclick="alertMessage()">find out more <i class="fas fa-angle-right"></i></a>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="150">
+            <div class="image">
+                <img src="images/North-East-Coast-Explorer.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>NORTH & EAST COAST EXPLORER</h3>
+                <h5>9 DAYS 8 NIGHTS</h5>
+                <p>The North and East of Sri Lanka are blessed with many beaches and our tours introduce you to the attractions of the unexplored North and East.</p>
+                <a href="" onclick="alertMessage()">find out more <i class="fas fa-angle-right"></i></a>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="150">
+            <div class="image">
+                <img src="images/Turquoise-Seas-m.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>TURQUOISE SEAS</h3>
+                <h5>12 NIGHTS 13 DAYS</h5>
+                <p>With wide stretches of sand or palm-fringed secluded bays, Sri Lanka’s beaches are lapped by shallow lagoons or high, curling waves</p>
+                <a href="" onclick="alertMessage()">find out more <i class="fas fa-angle-right"></i></a>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="150">
+            <div class="image">
+                <img src="images/Family-Friendly-Srilanka.png" alt="">
+            </div>
+            <div class="content">
+                <h3>FAMILY FRIENDLY SRI LANKA</h3>
+                <h5>11 NIGHTS 12 DAYS</h5>
+                <p>Ever considered taking an Island vacation this summer? A family friendly island awaits your discovery. We are here to guide you every step of the way</p>
+                <a href="" onclick="alertMessage()">find out more <i class="fas fa-angle-right"></i></a>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="150">
+            <div class="image">
+                <img src="images/Solo-tour.png" alt="">
+            </div>
+            <div class="content">
+                <h3>SOLO ROADS OF SRI LANKA.</h3>
+                <h5>12 NIGHTS & 13 DAYS</h5>
+                <p>Travelling alone doesn`t have to mean you are alone! Here’s your chance to immerse yourself into a tropical island adventure and make new memories ...</p>
+                <a href="" onclick="alertMessage()">find out more <i class="fas fa-angle-right"></i></a>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="150">
+            <div class="image">
+                <img src="images/Wedded-Bliss-m (1).jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>HAPPILY EVER AFTER</h3>
+                <h5>6 NIGHTS & 7 DAYS</h5>
+                <p>Expereince the best of tropical paradise with our 7 day honeymoon tour which will take you through the amazing sights of Sri Lanka</p>
+                <a href="" onclick="alertMessage()">find out more <i class="fas fa-angle-right"></i></a>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="150">
+            <div class="image">
+                <img src="images/The-Wanderer-m.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>THE WANDERER</h3>
+                <h5>8 NIGHTS 9 DAYS</h5>
+                <p>There is no better way than to enjoy the awesome scenery of Sri Lanka than by trekking through its beautiful landscapes</p>
+                <a href="" onclick="alertMessage()">find out more <i class="fas fa-angle-right"></i></a>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="150">
+            <div class="image">
+                <img src="images/Central-Highlands.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>CENTRAL HIGHLANDS</h3>
+                <h5>8 NIGHTS 9 DAYS</h5>
+                <p>Spend nine days experiencing the beauty of Sri Lanka’s hill country.</p>
+                <a href="" onclick="alertMessage()">find out more <i class="fas fa-angle-right"></i></a>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="150">
+            <div class="image">
+                <img src="images/Hill-Comfort-m.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>HILL COMFORT</h3>
+                <h5>6 NIGHTS 7 DAYS</h5>
+                <p>The hill country of Sri Lanka reflects the aspirations of 19th & 20th century British colonisers to create a home away from home in the tropics wi ...</p>
+                <a href="" onclick="alertMessage()">find out more <i class="fas fa-angle-right"></i></a>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="150">
+            <div class="image">
+                <img src="images/Royal-Heritage-m.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>ROYAL HERITAGE</h3>
+                <h5>9 NIGHT 10 DAYS</h5>
+                <p>Experience the beauty of Sri Lankan heritage and culture while enjoying the sophisticated luxury of boutique properties during your tour.</p>
+                <a href="" onclick="alertMessage()">find out more <i class="fas fa-angle-right"></i></a>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="150">
+            <div class="image">
+                <img src="images/Sri-Lanka-Highlights.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>SRI LANKA HIGHLIGHTS</h3>
+                <h5>4 NIGHTS 5 DAYS</h5>
+                <p>Experience the highlights of Sri Lanka in this well-planned itinerary that showcases the jewels of our cultural heritage.</p>
+                <a href="" onclick="alertMessage()">find out more <i class="fas fa-angle-right"></i></a>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="150">
+            <div class="image">
+                <img src="images/Classic-Cultural.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>CLASSIC CULTURAL</h3>
+                <h5>9 NIGHT 10 DAYS</h5>
+                <p>Experience the history and culture of Sri Lanka in this tour that covers the most of what this ancient island has to offer.</p>
+                <a href="" onclick="alertMessage()">find out more <i class="fas fa-angle-right"></i></a>
+            </div>
+        </div>
+
+        
+    </div>
+
+</section>
+
+<!-- destination section starts  -->
+
+<section class="destination" id="destination">
+
+    <div class="heading">
+        <span>our destination</span>
+        <h1>make yours destination</h1>
+    </div>
+
+    <div class="box-container">
+
+        <div class="box" data-aos="fade-up" data-aos-delay="150">
+            <div class="image">
+                <img src="images/des-1.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>Sigiriya or Sinhagiri</h3>
+                <p>An ancient rock fortress located in the northern Matale District near the town of Dambulla</p>
+                <a href="https://en.wikipedia.org/wiki/Sigiriya">read more <i class="fas fa-angle-right"></i></a>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="300">
+            <div class="image">
+                <img src="images/des-2.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>Galle Fort</h3>
+                <p>Galle Fort,was built first in 1588 by the Portuguese, then extensively fortified by the Dutch during the 17th century</p>
+                <a href="https://en.wikipedia.org/wiki/Galle_Fort">read more <i class="fas fa-angle-right"></i></a>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="450">
+            <div class="image">
+                <img src="images/des-3.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>Sri Dalada Maligawa</h3>
+                <p>The Temple of the Sacred Tooth Relic is a Buddhist temple in Kandy which houses the relic of the tooth of the Buddha. </p>
+                <a href="#">read more <i class="fas fa-angle-right"></i></a>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="600">
+            <div class="image">
+                <img src="images/des-4.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>Horton Plains National Park</h3>
+                <p>Horton Plains is a national park in the central highlands of Sri Lanka that was designated in 1988.</p>
+                <a href="https://en.wikipedia.org/wiki/Horton_Plains_National_Park">read more <i class="fas fa-angle-right"></i></a>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="750">
+            <div class="image">
+                <img src="images/des-5.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>Anuradhapura</h3>
+                <p>Anuradhapura is a major city located in north central plain of Sri Lanka. With a huge ancient history along with sinhalese and buddhists.</p>
+                <a href="https://en.wikipedia.org/wiki/Anuradhapura">read more <i class="fas fa-angle-right"></i></a>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="900">
+            <div class="image">
+                <img src="images/des-6.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>Royal Botanical Garden Peradeniya</h3>
+                <p>Royal Botanic Gardens, Peradeniya are about 5.5 km to the west of the city of Kandy in the Central Province of Sri Lanka.</p>
+                <a href="https://en.wikipedia.org/wiki/Royal_Botanical_Gardens,_Peradeniya">read more <i class="fas fa-angle-right"></i></a>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="1150">
+            <div class="image">
+                <img src="images/des-7.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>Polonnaruwa</h3>
+                <p>The modern town of Polonnaruwa is also known as New Town, and the other part of Polonnaruwa remains as the royal ancient city of the Kingdom of Polonnaruwa.</p>
+                <a href="#">read more <i class="fas fa-angle-right"></i></a>
+            </div>
+        </div>
+
+
+
+    </div>
+
+</section>
+
+<!-- destination section ends -->
+
+<!-- services section starts  -->
+
+<section class="services" id="services">
+
+    <div class="heading">
+        <span>our services</span>
+        <h1>countless expericences</h1>
+    </div>
+
+    <div class="box-container">
+
+        <div class="box" data-aos="zoom-in-up" data-aos-delay="150">
+            <i class="fas fa-globe"></i>
+            <h3>worldwide</h3>
+            <p>Have expertise with so many different nationalities, even the drivers and guides have traveled all over the world.</p>
+        </div>
+
+        <div class="box" data-aos="zoom-in-up" data-aos-delay="300">
+            <i class="fas fa-hiking"></i>
+            <h3>adventures</h3>
+            <p>You can participate in adventure programs like surfing, hiking and trekking, wildlife safaris, whale watching, scuba diving, and hot air balloon rides in Sri Lanka. </p>
+        </div>
+
+        <div class="box" data-aos="zoom-in-up" data-aos-delay="450">
+            <i class="fas fa-utensils"></i>
+            <h3>food & drinks</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam, cumque.</p>
+        </div>
+
+        <div class="box" data-aos="zoom-in-up" data-aos-delay="600">
+            <i class="fas fa-hotel"></i>
+            <h3>affordable hotels</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam, cumque.</p>
+        </div>
+
+        <div class="box" data-aos="zoom-in-up" data-aos-delay="750">
+            <i class="fas fa-wallet"></i>
+            <h3>affordable price</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam, cumque.</p>
+        </div>
+
+        <div class="box" data-aos="zoom-in-up" data-aos-delay="900">
+            <i class="fas fa-headset"></i>
+            <h3>24/7 support</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam, cumque.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- services section ends -->
+
+<!-- gallery section starts  -->
+
+<section class="gallery" id="gallery">
+
+    <div class="heading">
+        <span>our gallery</span>
+        <h1>we record memories</h1>
+    </div>
+    
+    <div class="box-container">
+
+        <div class="box" data-aos="zoom-in-up" data-aos-delay="150">
+            <img src="images/gallery-img-1.jpg" alt="">
+            <span>travel spot</span>
+            <h3>iceland</h3>
+        </div>
+
+        <div class="box" data-aos="zoom-in-up" data-aos-delay="300">
+            <img src="images/gallery-img-2.jpg" alt="">
+            <span>travel spot</span>
+            <h3>greenland</h3>
+        </div>
+
+        <div class="box" data-aos="zoom-in-up" data-aos-delay="450">
+            <img src="images/gallery-img-3.jpg" alt="">
+            <span>travel spot</span>
+            <h3>Dabana</h3>
+        </div>
+
+        <div class="box" data-aos="zoom-in-up" data-aos-delay="150">
+            <img src="images/gallery-img-4.jpg" alt="">
+            <span>travel spot</span>
+            <h3>thailand</h3>
+        </div>
+
+        <div class="box" data-aos="zoom-in-up" data-aos-delay="300">
+            <img src="images/gallery-img-5.jpg" alt="">
+            <span>travel spot</span>
+            <h3>brazil</h3>
+        </div>
+
+        <div class="box" data-aos="zoom-in-up" data-aos-delay="450">
+            <img src="images/gallery-img-6.jpg" alt="">
+            <span>travel spot</span>
+            <h3>maldive</h3>
+        </div>
+
+        <div class="box" data-aos="zoom-in-up" data-aos-delay="150">
+            <img src="images/gallery-img-7.jpg" alt="">
+            <span>travel spot</span>
+            <h3>Sigiriya</h3>
+        </div>
+
+        <div class="box" data-aos="zoom-in-up" data-aos-delay="300">
+            <img src="images/gallery-img-8.jpg" alt="">
+            <span>travel spot</span>
+            <h3>alaska</h3>
+        </div>
+
+        <div class="box" data-aos="zoom-in-up" data-aos-delay="450">
+            <img src="images/gallery-img-9.jpg" alt="">
+            <span>travel spot</span>
+            <h3>Ohiya</h3>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- gallery section ends -->
+
+<!-- review section starts  -->
+
+<section class="review">
+
+    <div class="content" data-aos="fade-right" data-aos-delay="300">
+        <span>testimonials</span>
+        <h3>good news from our clients</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda laudantium corporis fugiat quae unde perspiciatis similique ab modi enim consequatur aperiam cumque distinctio facilis sit, debitis possimus asperiores non harum.</p>
+    </div>
+
+    <div class="box-container" data-aos="fade-left" data-aos-delay="600">
+
+        <div class="box">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia, ratione.</p>
+            <div class="user">
+                <img src="images/pic-1.png" alt="">
+                <div class="info">
+                    <h3>john deo</h3>
+                    <span>designer</span>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia, ratione.</p>
+            <div class="user">
+                <img src="images/pic-2.png" alt="">
+                <div class="info">
+                    <h3>john deo</h3>
+                    <span>designer</span>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia, ratione.</p>
+            <div class="user">
+                <img src="images/pic-3.png" alt="">
+                <div class="info">
+                    <h3>john deo</h3>
+                    <span>designer</span>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia, ratione.</p>
+            <div class="user">
+                <img src="images/pic-4.png" alt="">
+                <div class="info">
+                    <h3>john deo</h3>
+                    <span>designer</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- review section ends -->
+
+<!-- blogs section starts  -->
+
+<section class="blogs" id="blogs">
+
+    <div class="heading">
+        <span>blogs & posts</span>
+        <h1>we untold stories</h1>
+    </div>
+
+    <div class="box-container">
+
+        <div class="box" data-aos="fade-up" data-aos-delay="150">
+            <div class="image">
+                <img src="images/blog-1.jpg" alt="">
+            </div>
+            <div class="content">
+                <a href="#" class="link">Life is a journey, not a destination</a>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, natus!</p>
+                <div class="icon">
+                    <a href="#"><i class="fas fa-clock"></i> 21st may, 2021</a>
+                    <a href="#"><i class="fas fa-user"></i> by admin</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="300">
+            <div class="image">
+                <img src="images/blog-2.jpg" alt="">
+            </div>
+            <div class="content">
+                <a href="#" class="link">Life is a journey, not a destination</a>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, natus!</p>
+                <div class="icon">
+                    <a href="#"><i class="fas fa-clock"></i> 21st may, 2021</a>
+                    <a href="#"><i class="fas fa-user"></i> by admin</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="450">
+            <div class="image">
+                <img src="images/blog-3.jpg" alt="">
+            </div>
+            <div class="content">
+                <a href="#" class="link">Life is a journey, not a destination</a>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, natus!</p>
+                <div class="icon">
+                    <a href="#"><i class="fas fa-clock"></i> 21st may, 2021</a>
+                    <a href="#"><i class="fas fa-user"></i> by admin</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- blogs section ends -->
+
+<!-- banner section starts  -->
+
+<div class="banner">
+
+    <div class="content" data-aos="zoom-in-up" data-aos-delay="300">
+        <span>start your adventures</span>
+        <h3>Let's Explore This World</h3>
+        <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum voluptatum praesentium amet quibusdam quam officia suscipit odio.</p> -->
+        <a href="#packages" class="btn">book now</a>
+    </div>
+
+</div>
+
+<!-- banner section ends -->
+
+<!-- footer section starts  -->
+
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box" data-aos="fade-up" data-aos-delay="150">
+            <a href="#" class="logo">soori travels </a>
+            <p style="text-align:justify">We are with over 20 years of expertise in the Sri Lankan tourism industry in cluding "A" grade drivers, and guides who are almost fully knowledgeable about Sri Lanka</p>
+            <div class="share">
+                <a href="https://www.facebook.com/tharusha.dasun.9212" class="fab fa-facebook-f"></a>
+                <a href="https://www.tripadvisor.co.uk/Attraction_Review-g644047-d25182290-Reviews-Soori_Travels-Unawatuna_Galle_District_Southern_Province.html" class="fa fa-tripadvisor"></a>
+                <a href="https://www.instagram.com/soori_travels/" class="fab fa-instagram"></a>
+                <a href="https://www.linkedin.com/in/sooriarachchi-kamal-3a110985/?originalSubdomain=lk" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="300">
+            <h3>quick links</h3>
+            <a href="#home" class="links"> <i class="fas fa-arrow-right"></i> home </a>
+            <a href="#about" class="links"> <i class="fas fa-arrow-right"></i> about </a>
+            <a href="#destination" class="links"> <i class="fas fa-arrow-right"></i> destination </a>
+            <a href="#services" class="links"> <i class="fas fa-arrow-right"></i> services </a>
+            <a href="#gallery" class="links"> <i class="fas fa-arrow-right"></i> gallery </a>
+            <a href="#blogs" class="links"> <i class="fas fa-arrow-right"></i> blogs </a>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="450">
+            <h3>contact info</h3>
+            <p> <i class="fas fa-map"></i> Galle, Sri Lanka </p>
+            <p> <i class="fas fa-phone"></i> +94 766977234 </p>
+            <p> <i class="fas fa-envelope"></i> Soori_70@hotmaiil.com </p>
+            <p> <i class="fas fa-clock"></i> 7:00am - 10:00pm </p>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="600">
+            <h3>newsletter</h3>
+            <p>subscribe for latest updates</p>
+            <form action="">
+                <input type="email" name="" placeholder="enter your email" class="email" id="">
+                <input type="submit" value="subscribe" class="fbtn">
+            </form>
+        </div>
+
+    </div>
+
+</section>
+
+<div class="credit">created by <a href="developers.html">team us</a> | all rights reserved!</div>
+
+<!-- footer section ends -->
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+<script>
+
+    AOS.init({
+        duration: 800,
+        offset:150,
+    });
+
+</script>
+
+<script>
+    function alertMessage(){
+  // Code to be executed when the button is clicked
+  event.preventDefault();
+  var alertMessage ="For access these packages you need to login first!";
+  alert(alertMessage);
+}
+</script>
+
+</body>
+</html>

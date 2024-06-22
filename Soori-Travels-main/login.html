@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="icon" href="images/title_icon.png">
+  <!-- custom css file link  -->
+  <link rel="stylesheet" href="css/csslogin.css">
+  <script src="/js/registerjs.js"></script>
+  <script src="/js/login.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+   <!-- Include the Firebase JS SDK (version 8.x.x) -->
+   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+   
+
+  <!-- ... Other imports if needed -->
+
+  <script>
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyCuabmc1djlyxxQBPQaYUUhRPEj55072S4",
+      authDomain: "sooritravels.firebaseapp.com",
+      databaseURL: "https://sooritravels-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "sooritravels",
+      storageBucket: "sooritravels.appspot.com",
+      messagingSenderId: "89412229823",
+      appId: "1:89412229823:web:0a433668d6aacc2dd9840a",
+      measurementId: "G-J7K7LEHXWW"
+    };
+
+    // Initialize Firebase
+    const app = firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore(); // Initialize Firestore
+
+    // ... Initialize other Firebase services if needed (e.g., Firebase Authentication)
+  </script>
+</head>
+
+<body>
+
+  <!-- header section starts -->
+  <header class="header">
+    <div id="menu-btn" class="fas fa-bars"></div>
+    <a data-aos="zoom-in-left" data-aos-delay="150" href="#" class="logo">Soori Travels </a>
+    <nav class="navbar"><a data-aos="zoom-in-left" data-aos-delay="300">customer login</a></nav>
+    <a data-aos="zoom-in-left" data-aos-delay="450" href="index.html" class="btn">home</a>
+  </header>
+  <!-- header secction ends -->
+
+  <!-- banner sections starts -->
+  <div class="slider">
+    <img src="images/registration_banner.jpg" alt="Image 1">
+    <div class="slide-text" data-aos="fade-up" data-aos-delay="150">CUSTOMER LOGIN</div>
+    <div class="slide-link" data-aos="fade-up" data-aos-delay="300"><a href="index.html">Home </a><span >/ Login</span></div>
+  </div>
+  <!-- banner section ends -->
+
+  <!-- login form starts -->
+  <div class="form">
+    <form action="#" id="loginForm">
+      <div class="login" data-aos="fade-up" data-aos-delay="150">
+        <h2>Login</h2>
+      </div>
+      <div class="username" data-aos="fade-up" data-aos-delay="300">
+        <input type="text" placeholder="Enter your username" id="email" class="textbox" required>
+      </div>
+      <div class="password" data-aos="fade-up" data-aos-delay="450">
+        <input type="password" class="textbox" id="password"  placeholder="Enter your Password" required>
+      </div>
+      <div class="login" data-aos="fade-up" data-aos-delay="600">
+        <button type="submit" id="loginbtn" class="btn">Login</button>
+      </div>
+      <div class="forgotpassword" data-aos="fade-up" data-aos-delay="750">
+        <a href="#" id="forgotLink">Forgot Password?</a>
+      </div>
+      <div class="register" data-aos="fade-up" data-aos-delay="900">
+        <p>Don't have an account? <a href="register.html">Register</a></p>
+      </div>
+      <div class="orlogin" data-aos="fade-up" data-aos-delay="900">
+        <span>or login with</span>
+      </div>
+      <div class="google" data-aos="fade-up" >
+        <button type="button" class="login-with-google-btn">
+          Google
+        </button>
+        <button type="button" class="login-with-facebook-btn">
+          Facebook
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    const loginForm = document.getElementById('loginForm');
+
+    loginForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const email = loginForm.querySelector('#email').value;
+      const password = loginForm.querySelector('#password').value;
+
+      // Check if the username and password match a document in Firestore
+      db.collection('users').where('email', '==', email).where('password', '==', password).get()
+        .then(function (querySnapshot) {
+          if (!querySnapshot.empty) {
+            const userDoc = querySnapshot.docs[0]; // Assuming there's only one matching document
+
+            // Update the 'status' field to 'logged in'
+            userDoc.ref.update({ status: 'logged in' })
+              .then(() => {
+                // Store email in localStorage
+                localStorage.setItem('userEmail', email);
+
+                window.alert("Login successful!");
+                window.location.href = 'postLogin.html';
+              })
+              .catch((error) => {
+                console.error("Error updating status: ", error);
+              });
+          } else {
+            window.alert("Invalid username or password. Please try again.");
+          }
+        })
+        .catch(function (error) {
+          console.error("Error checking login credentials: ", error);
+        });
+    });
+  </script>
+
+  <!-- footer section starts -->
+  <div class="copyrights">
+    <span>Copyright & 2023www.Sooritravels.com. All rights reserved</span>
+  </div>
+  <!-- footer section ends -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+  <script>
+      AOS.init({
+          duration: 800,
+          offset:150,
+      });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>user profile</title>
+<link rel="icon" href="images/title_icon.png">
+
+<!-- custom css file link  -->
+<link rel="stylesheet" href="css/customerProfile.css">
+ 
+<script src="js/basicInfo.js"></script>
+<script src="js/customerProfile.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Retrieve user email from localStorage
+            const userEmail = localStorage.getItem('userEmail');
+
+            // Display a prompt message with the user's email
+            if (userEmail) {
+                alert(`Welcome! Your email is: ${userEmail}`);
+            } else {
+                alert("User email not found in localStorage.");
+            }
+        });
+</script>
+<!-- Include the Firebase JS SDK (version 8.x.x)-->
+
+
+<!-- Include the Firebase JS SDK (version 8.x.x) -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+<!-- Include the Firebase Storage library -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+  <script>
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyCuabmc1djlyxxQBPQaYUUhRPEj55072S4",
+      authDomain: "sooritravels.firebaseapp.com",
+      databaseURL: "https://sooritravels-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "sooritravels",
+      storageBucket: "sooritravels.appspot.com",
+      messagingSenderId: "89412229823",
+      appId: "1:89412229823:web:0a433668d6aacc2dd9840a",
+      measurementId: "G-J7K7LEHXWW"
+    };
+
+
+    const app = firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth(); // Initialize Firebase Authentication
+    const db = firebase.firestore(); // Initialize Firestore
+
+
+  </script>
+
+  
+</head>
+
+<body>
+    
+    <!-- header section starts -->
+    <header class="header">
+        <div id="menu-btn" class="fas fa-bars"></div>
+        <a data-aos="zoom-in-left" data-aos-delay="150" href="index.html" class="logo">Soori Travels </a>
+        <nav class="navbar"><a data-aos="zoom-in-left" data-aos-delay="300">customer profile</a></nav>
+        <a data-aos="zoom-in-left" data-aos-delay="450" href="postLogin.html" class="btn">home</a>
+    </header>
+    <!-- header section ends -->
+
+    <!-- side navbar starts -->
+    <div class="sidebar1" >
+        <nav class="sidebar" data-aos="fade-right" data-aos-duration="1000">
+            <!-- <a href="#" class="logo">Soori travels</a> -->
+            <div class="menu-content">
+                <ul class="menu-items" >
+                    <div class="menu-title"></div>
+                    <li class="item">
+                        <a href="#" id="basicInfo" data-aos="fade-right" data-aos-delay="500">Basic Information</a>
+                    </li>
+                    <li class="item">
+                        <a href="#" id="security" data-aos="fade-right" data-aos-delay="650">Security</a>
+                    </li>
+                    <li class="item">
+                        <a href="#" id="bookingHistory" data-aos="fade-right" data-aos-delay="800">Booking History</a>
+                    </li>
+                    <li class="item">
+                        <a href="#" id="settings" data-aos="fade-right" data-aos-delay="950">Settings</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <script>
+
+    
+
+    </script>
+
+     <script>
+        
+            document.addEventListener("DOMContentLoaded", function () {
+            // Retrieve user email from localStorage
+            const userEmail = localStorage.getItem('userEmail');
+ 
+            if (userEmail) {
+                // Reference to the details form elements
+                const fullnameInput = document.getElementById('fullname');
+                const emailInput = document.getElementById('email');
+                const nationalityInput = document.getElementById('nationality');
+                const photoImage = document.getElementById('photo');
+
+                // Get user data from Firestore based on email
+                db.collection('users').where('email', '==', userEmail).get()
+                    .then((querySnapshot) => {
+                        if (!querySnapshot.empty) {
+                            const userData = querySnapshot.docs[0].data();
+
+                            // Update the text boxes with the retrieved data
+                            fullnameInput.value = userData.name;
+                            emailInput.value = userData.email;
+                            nationalityInput.value = userData.country;
+
+                            const profilePictureURL = userData.profilePicture;
+                    if (profilePictureURL) {
+                        photoImage.src = profilePictureURL;
+                    }
+                        } else {
+                            console.log("No matching document!");
+                        }
+                    })
+                    .catch((error) => {
+                        console.error("Error getting documents: ", error);
+                    });
+            } else {
+                alert("User email not found in localStorage.");
+            }
+        });
+    </script> 
+
+    <div class="contentBox">
+        <div class="profile-pic-div" >
+            <img src="images/profilepic.jpg" id="photo" data-aos="fade-up" data-aos-duration="500">
+
+            <input type="file" id="file" data-aos="fade-up" data-aos-duration="500">
+            <label for="file" id="uploadBtn" data-aos="fade-up" data-aos-duration="500">Choose Photo</label>
+        </div>
+        
+    <script>
+    // Assuming you have Firebase initialized and storageRef set up
+                // Declaring HTML elements
+    const imgDiv = document.querySelector('.profile-pic-div');
+    const img = document.querySelector('#photo');
+    const file = document.querySelector('#file');
+    const uploadBtn = document.querySelector('#uploadBtn');
+
+    // If the user hovers on the img div
+    imgDiv.addEventListener('mouseenter', function () {
+        uploadBtn.style.display = "block";
+    });
+
+    // If we hover out from img div
+    imgDiv.addEventListener('mouseleave', function () {
+        uploadBtn.style.display = "none";
+    });
+
+    const photoImage = document.querySelector('#photo');
+
+    // ...
+
+    // When we choose a photo to upload
+    file.addEventListener('change', function () {
+        // this refers to file
+        const choosedFile = this.files[0];
+
+        if (choosedFile) {
+            const reader = new FileReader(); // FileReader is a predefined function in JS
+
+            reader.addEventListener('load', function () {
+                img.setAttribute('src', reader.result);
+            });
+
+            reader.readAsDataURL(choosedFile);
+
+            // Enable the upload button after selecting an image
+            uploadBtn.style.pointerEvents = "auto";
+        }
+    });
+
+
+    file.addEventListener('change', function (e) {
+        const file = e.target.files[0];
+        const userEmail = localStorage.getItem('userEmail');
+
+        if (file) {
+            const storageRef = firebase.storage().ref();
+            const newFileName = `${userEmail}_profilePicture_${Date.now()}`;
+
+            const profilePictureRef = storageRef.child(`profilePictures/${newFileName}`);
+
+            profilePictureRef.put(file)
+                .then(snapshot => snapshot.ref.getDownloadURL())
+                .then(downloadURL => {
+                    // Update the image source with the new download URL
+                    photoImage.src = downloadURL;
+
+                    // Save the download URL to Firestore
+                    if (userEmail) {
+                        db.collection('users').where('email', '==', userEmail).get()
+                            .then((querySnapshot) => {
+                                if (!querySnapshot.empty) {
+                                    const userDoc = querySnapshot.docs[0].ref;
+                                    return userDoc.update({
+                                        profilePicture: downloadURL
+                                    });
+                                } else {
+                                    console.log("No matching document!");
+                                }
+                            })
+                            .catch((error) => {
+                                console.error("Error updating profile picture URL: ", error);
+                            });
+                    } else {
+                        console.error("User email not found in localStorage.");
+                    }
+
+                    console.log("Profile picture uploaded. Download URL:", downloadURL);
+                })
+                .catch(error => {
+                    console.error("Error uploading profile picture: ", error);
+                });
+        }
+    });
+
+    </script>
+
+        <div class="vertical-line" data-aos="fade" data-aos-duration="1000"></div>
+        <div class="detail" data-aos="fade-up" data-aos-duration="1000">
+            <form id="detailsForm" >
+                <h2>Basic Information</h2>
+                <div class="username">
+                    <label>Full Name</label><br>
+                    <input type="text" id="fullname"  readonly class="textbox">
+                </div>
+                <div class="email">
+                    <label>Email Address</label><br>
+                    <input type="text" id="email"  readonly class="textbox">
+                </div>
+                <div class="nationality">
+                    <label>Nationality</label><br>
+                    <input type="text" id="nationality"  readonly class="textbox">
+                </div>
+                <div class="btnupdate" id="btnupdate">
+                    <button type="button" id="updateBtn" class="btn" onclick="toggleEditMode()">Update Details</button>
+                </div>
+                <div class="btnedit" id="btnedit" style="display: none;">
+                    <button type="button" id="saveBtn" class="btn" onclick="saveChanges()">Save</button>
+                    <button type="button" id="cancelBtn" class="btn" onclick="cancelChanges()">Cancel</button>
+                </div>
+            </form>
+        </div>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+        
+        <script>
+        
+            AOS.init({
+                duration: 800,
+                offset:150,
+            });
+        
+        </script>
+    </div>
+    
+</body>
+</html>
+
+gs://sooritravels.appspot.com/profilePictures/prasasthi@gmail.com_profilePicture_1704164431247
